@@ -6,11 +6,14 @@ function Result({ token }) {
   useEffect(() => {
     const fetchResult = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/interview/result", {
-          headers: {
-            Authorization: `Bearer ${token}`
+        const res = await fetch(
+          `${process.env.REACT_APP_API_URL}/interview/result`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           }
-        });
+        );
 
         const data = await res.json();
         console.log("RESULT DATA:", data);

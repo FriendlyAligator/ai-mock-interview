@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import API from "./api.js";
+import API from "../api";
 
 function Login({ setToken, setPage}) {
   const [email, setEmail] = useState("");

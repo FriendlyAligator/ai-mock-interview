@@ -18,7 +18,8 @@ function Interview({ token, setPage }) {
         "/interview/start",
         { role: selectedRole },
         {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: { Authorization: `Bearer ${token}`},
+          "Content-Type": "application/json"
         }
       );
 

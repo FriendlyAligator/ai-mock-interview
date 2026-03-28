@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import Login from "./pages/Login.js";
 import Register from "./pages/Register.js";
 import Interview from "./pages/Interview.js";
-import Result from "./pages/Result..js";
+import Result from "./pages/Result.js";
 import Dashboard from "./pages/Dashboard.js";
 
 function App() {

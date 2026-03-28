@@ -16,7 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-models.Base.metadata.create_all(bind=engine)
+if engine:
+    models.Base.metadata.create_all(bind=engine)
 
 app.include_router(user.router)
 app.include_router(interview.router)

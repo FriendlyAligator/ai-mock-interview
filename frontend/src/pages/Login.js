@@ -12,6 +12,8 @@ function Login({ setToken, setPage}) {
         password
       });
 
+      console.log("API URL:", process.env.REACT_APP_API_URL);
+      
       const token = res.data.access_token;
 
       // ✅ Save token

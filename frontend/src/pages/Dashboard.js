@@ -15,7 +15,7 @@ function Dashboard({ token , refresh }) {
     setData([]);
     setInterviews([]); // clear UI
 
-    const result = await res.json();
+    const result = res.data;
     setData(result);
     alert("✅ Dashboard reset successful!");
 

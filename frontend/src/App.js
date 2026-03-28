@@ -1,9 +1,9 @@
 import React, { useState, useEffect} from "react";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Interview from "./pages/Interview";
-import Result from "./pages/Result";
-import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login.js";
+import Register from "./pages/Register.js";
+import Interview from "./pages/Interview.js";
+import Result from "./pages/Result..js";
+import Dashboard from "./pages/Dashboard.js";
 
 function App() {
   const [token, setToken] = useState(() => localStorage.getItem("token"));

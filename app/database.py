@@ -3,7 +3,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-engine = create_engine(DATABASE_URL)
+
+# fix database crash
+if DATABASE_URL:
+    engine = create_engine(DATABASE_URL)
+else:
+    engine = None
 
 SessionLocal = sessionmaker(
     autocommit=False,

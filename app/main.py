@@ -8,6 +8,11 @@ from app.routes import user, interview
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+    "https://ai-mock-interview-one-fawn.vercel.app"
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

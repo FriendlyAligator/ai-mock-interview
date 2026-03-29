@@ -55,3 +55,11 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     access_token = create_access_token(data={"sub": db_user.email})
 
     return {"access_token": access_token, "token_type": "bearer"}
+
+
+# delete user (TEMP)
+@router.delete("/delete-users")
+def delete_users(db: Session = Depends(get_db)):
+    db.query(models.User).delete()
+    db.commit()
+    return {"message": "All users deleted"}

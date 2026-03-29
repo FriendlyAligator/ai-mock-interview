@@ -20,7 +20,7 @@ origins = [
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        https://interview-ufu7.onrender.com/
+        "https://interview-ufu7.onrender.com/"
     ],   
     allow_credentials=True,
     allow_methods=["*"],

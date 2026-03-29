@@ -40,7 +40,6 @@ def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return new_user
 
 
-# Login User
 @router.post("/login", response_model=schemas.Token)
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
 
@@ -54,10 +53,12 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
 
     access_token = create_access_token(data={"sub": db_user.email})
 
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {
+        "access_token": access_token,
+        "token_type": "bearer"
+    }
 
 
-# delete user (TEMP)
 @router.delete("/delete-users")
 def delete_users(db: Session = Depends(get_db)):
     db.query(models.User).delete()

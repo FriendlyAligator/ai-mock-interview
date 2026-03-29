@@ -7,9 +7,15 @@ function Login({ setToken, setPage}) {
 
   const login = async () => {
     try {
-      const res = await API.post("/users/login", {
-        email,
-        password
+      
+      const formData = new URLSearchParams();
+      formData.append("username", email);   // ⚠️ IMPORTANT
+      formData.append("password", password);
+      
+      const res = await API.post("/users/login", formData, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       });
       
       const token = res.data.access_token;

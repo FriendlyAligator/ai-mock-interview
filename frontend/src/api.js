@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: "https://ai-mock-interview-rs8j.onrender.com"
 });
 
 export default API;

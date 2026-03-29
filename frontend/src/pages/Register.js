@@ -14,7 +14,7 @@ function Register({ setPage }) {
 
     try {
       const res = await fetch(
-        `${process.env.REACT_APP_API_URL}/users/register`,
+      `https://ai-mock-interview-rs8j.onrender.com/users/register`,
         {
           method: "POST",
           headers: {

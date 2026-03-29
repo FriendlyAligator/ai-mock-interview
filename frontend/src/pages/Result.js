@@ -6,8 +6,8 @@ function Result({ token }) {
   useEffect(() => {
     const fetchResult = async () => {
       try {
-        const res = await fetch(
-          `${process.env.REACT_APP_API_URL}/interview/result`,
+         const res = await fetch(
+          `https://ai-mock-interview-rs8j.onrender.com/interview/result`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

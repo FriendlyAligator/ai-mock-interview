@@ -3,11 +3,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-
+print("DATABASE_URL:", DATABASE_URL)
 # 🔥 Fix for Render PostgreSQL
 if DATABASE_URL:
     DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+psycopg2://")
     engine = create_engine(DATABASE_URL)
+    
 else:
     engine = None
 

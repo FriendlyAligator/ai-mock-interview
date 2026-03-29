@@ -6,43 +6,36 @@ function Login({ setToken, setPage}) {
   const [password, setPassword] = useState("");
 
   const login = async () => {
-    try {
-      
-      const formData = new URLSearchParams();
-      formData.append("username", email);   // ⚠️ IMPORTANT
-      formData.append("password", password);
-      
-      const res = await API.post("/users/login", formData, {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
-      
-      const token = res.data.access_token;
+  try {
+    const formData = new URLSearchParams();
+    formData.append("username", email);   // MUST be username
+    formData.append("password", password);
 
-      // ✅ Save token
-      setToken(token);
-      localStorage.setItem("token", token);
+    const res = await API.post("/users/login", formData, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
 
-      // 🔥 UPDATED USERNAME LOGIC (ONLY CHANGE)
-      const rawName = email.split("@")[0];
-      const cleanName = rawName.replace(/[^a-zA-Z]/g, "");
-      const firstName = cleanName.split(" ")[0];
+    const token = res.data.access_token;
 
-      console.log("RAW:", rawName);
-      console.log("CLEAN:", cleanName);
-      console.log("FINAL:", firstName);
+    setToken(token);
+    localStorage.setItem("token", token);
 
-      localStorage.setItem("username", firstName.toUpperCase());
+    const rawName = email.split("@")[0];
+    const cleanName = rawName.replace(/[^a-zA-Z]/g, "");
+    const firstName = cleanName.split(" ")[0];
 
-      // ✅ Save login time
-      const now = new Date().toISOString();
-      localStorage.setItem("loginTime", now);
+    localStorage.setItem("username", firstName.toUpperCase());
 
-    } catch (err) {
-      alert("❌ Login failed");
-    }
-  };
+    const now = new Date().toISOString();
+    localStorage.setItem("loginTime", now);
+
+  } catch (err) {
+    console.error(err);
+    alert("❌ Login failed");
+  }
+};
 
   return (
     <div style={{

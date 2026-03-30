@@ -49,6 +49,10 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     if not db_user:
         raise HTTPException(status_code=400, detail="Invalid credentials")
 
+     # 👇 ADD DEBUG HERE
+    print("Entered Password:", form_data.password)
+    print("Stored Hashed Password:", db_user.password)
+
     # ✅ SAFETY CHECK
     try:
         is_valid = verify_password(form_data.password, db_user.password)

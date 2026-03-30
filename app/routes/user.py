@@ -48,7 +48,13 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     if not db_user:
         raise HTTPException(status_code=400, detail="Invalid credentials")
 
-    if not verify_password(form_data.password, db_user.password):
+    # ✅ SAFETY CHECK
+    try:
+        is_valid = verify_password(form_data.password, db_user.password)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Password verification failed")
+
+    if not is_valid:
         raise HTTPException(status_code=400, detail="Invalid credentials")
 
     access_token = create_access_token(data={"sub": db_user.email})

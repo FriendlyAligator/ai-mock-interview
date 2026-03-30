@@ -106,7 +106,7 @@ function Login({ setToken, setPage}) {
         />
 
           <input
-            type="text"
+            type="password"
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

@@ -157,13 +157,13 @@ function App() {
                 if (!confirmReset) return;
 
                 try {
-                  const res = await fetch("http://127.0.0.1:8000/interview/reset", {
-                    method: "DELETE", 
-                    headers: {
-                      Authorization: `Bearer ${token}`
-                    }
-                  });
-
+                  const res = await fetch("https://ai-mock-interview-rs8j.onrender.com/interview/reset", {
+                  method: "DELETE",
+                  headers: {
+                    Authorization: `Bearer ${token}`
+                  }
+                });
+                  
                   if (!res.ok) throw new Error("Reset failed");
 
                   setMessage("History cleared successfully!");

@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from .. import models, schemas
 from ..database import SessionLocal
 from ..auth import hash_password, verify_password, create_access_token
+from sqlalchemy import text
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
@@ -67,6 +68,6 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
 
 @router.delete("/delete-users")
 def delete_users(db: Session = Depends(get_db)):
-    db.query(models.User).delete()
+    db.execute(text("TRUNCATE TABLE users RESTART IDENTITY CASCADE"))
     db.commit()
-    return {"message": "All users deleted"}
+    return {"message": "All users deleted and ID reset"}

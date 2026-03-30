@@ -51,10 +51,8 @@ Password: demo123
 
 ## 📷 Screenshots
 
-## 📷 Screenshots
-
 ### 🔐 Login Page
-![Login](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/login.png)
+![Login](https://github.com/FriendlyAligator/ai-mock-interview/blob/main/Login.png)
 
 ### 🎯 Role Selection
 ![Role](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/role-selection.png)

@@ -43,6 +43,7 @@ An AI-powered mock interview platform that helps users practice interviews in a 
 ## 🧪 Demo Credentials
 
 Email: demo@interview.com
+
 Password: demo123
 
 
@@ -50,13 +51,22 @@ Password: demo123
 
 ## 📷 Screenshots
 
-> Add your project screenshots here
+## 📷 Screenshots
 
-- Login Page  
-- Role Selection  
-- Interview Screen  
-- Result Page  
-- Dashboard  
+### 🔐 Login Page
+![Login](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/login.png)
+
+### 🎯 Role Selection
+![Role](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/role-selection.png)
+
+### 💬 Interview Screen
+![Interview](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/interview.png)
+
+### ⭐ Result Page
+![Result](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/result.png)
+
+### 📊 Dashboard
+![Dashboard](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/dashboard.png) 
 
 ---
 

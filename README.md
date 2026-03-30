@@ -64,7 +64,7 @@ Password: demo123
 ![Result](https://github.com/FriendlyAligator/ai-mock-interview/blob/main/ResultPage.png)
 
 ### 📊 Dashboard
-![Dashboard](https://raw.githubusercontent.com/FriendlyAligator/ai-mock-interview/main/dashboard.png) 
+![Dashboard](https://github.com/FriendlyAligator/ai-mock-interview/blob/main/Dashboard.png) 
 
 ---
 
